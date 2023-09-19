@@ -4,8 +4,9 @@ class Cliente {
 
   late String _id, _nome, _cognome, _email, _residenza, _dataNascita, _IBAN, _docID, _username;
 
+  Cliente(this._nome, this._cognome, this._email, this._residenza, this._dataNascita, this._IBAN, this._docID, this._username);
 
-  Cliente(Map<String, dynamic> json) {
+  Cliente.fromJson(Map<String, dynamic> json) {
       _id = json['id'];
       _nome = json['nome'];
       _cognome = json['cognome'];

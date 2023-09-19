@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:sisinf/UI/pages/RegistraCliente.dart';
 import 'package:sisinf/UI/pages/homepage.dart';
 
 import '../../restManagers/HttpRequest.dart';
@@ -62,7 +63,7 @@ class _DipendenteLoginState extends State<DipendenteLogin>{
         showSnackBarOK(context);
         //Navigator.of(context).pushReplacementNamed('/homePageAuth');
         Navigator.push(context,
-            MaterialPageRoute(builder: ((context) => HomePage())));
+            MaterialPageRoute(builder: ((context) => RegistraCliente())));
       },
       hideForgotPasswordButton: true,
       onRecoverPassword: (String ) {  },

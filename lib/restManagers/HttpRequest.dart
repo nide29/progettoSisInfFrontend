@@ -4,6 +4,7 @@ import 'package:jwt_decode/jwt_decode.dart';
 
 import '../RestManagers/RestManager.dart';
 import '../models/AuthenticationData.dart';
+import '../models/Cliente.dart';
 import '../supports/Constants.dart';
 import '../supports/LoginResults.dart';
 
@@ -139,20 +140,21 @@ class Model {
   }
 
    */
-/*
-  void registerUser(User u, String password) async{
+
+  void register(Cliente c, String password) async{
     Map<String, dynamic> params = Map();
-    params["user"] = u.toJson();
+    params["cliente"] = c.toJson();
     params["password"] = password;
     try {
        await _restManager.makePostRequest(
-          Constants.ADDRESS_STORE_SERVER, Constants.CREATE_USER, params,
+          Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_ADD_CLIENTE, params,
           type: TypeHeader.json);
     }catch(e){
       print(e);
     }
   }
 
+/*
   String getClientFromToken(){
     Map<String, dynamic>? decodedToken = Jwt.parseJwt(_restManager.token!);
     return decodedToken['email'];
