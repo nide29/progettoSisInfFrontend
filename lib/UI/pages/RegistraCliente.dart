@@ -79,6 +79,10 @@ class _RegistrationPageState extends State<RegistraCliente> {
               controller: _IbanController,
               decoration: InputDecoration(labelText: 'IBAN'),
             ),
+            TextField(
+              controller: _passwordController,
+              decoration: InputDecoration(labelText: 'Password'),
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Color.fromRGBO(32, 79, 161, 1),

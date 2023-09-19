@@ -141,6 +141,18 @@ class Model {
 
    */
 
+  Future<List<Cliente>> getAllCliente() async {
+    Map<String, String> params = Map();
+    return List<Cliente>.from(jsonDecode(await _restManager.makeGetRequest(
+        Constants.ADDRESS_STORE_SERVER,
+        Constants.REQUEST_SEARCH_CLIENTE,
+        params,
+        TypeHeader.json))
+        .map((i) => Cliente.fromJson(i))
+        .toList());
+  }
+
+
   void register(Cliente c, String password) async{
     Map<String, dynamic> params = Map();
     params["cliente"] = c.toJson();

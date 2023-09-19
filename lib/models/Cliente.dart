@@ -15,19 +15,19 @@ class Cliente {
       _docID = json['documento_identita'];
       _email = json['email'];
       _username= json['username'];
-      _IBAN = json['IBAN'];
+      _IBAN = json['iban'];
   }
 
   Map<String, dynamic> toJson() {
     return {
       'nome': _nome,
       'cognome': _cognome,
-      'data_nascita': _dataNascita,
-      'residenza': _residenza,
       'documento_identita': _docID,
       'email': _email,
       'username':_username,
-      'IBAN': _IBAN,
+      'iban': _IBAN,
+      'residenza': _residenza,
+      'data_nascita': _dataNascita,
     };
   }
 

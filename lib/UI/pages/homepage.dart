@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_cards/flutter_custom_cards.dart';
+import 'package:sisinf/UI/pages/RegistraCliente.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(top: 150)),
+          Padding(padding: EdgeInsets.only(top: 100)),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   onPressed: () {
-                      //Navigator.push(context, MaterialPageRoute(builder: ((context) => )));
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => RegistraCliente())));
                   },
 
                     child: Column(children: [

@@ -26,26 +26,9 @@ class _DipendenteLoginState extends State<DipendenteLogin>{
   Duration get loginTime => Duration(milliseconds: 2250);
 
   //PROVVISORIO
-  void showSnackBarOK(BuildContext context) {
-    final snackBar = SnackBar(
-      content: Text('Order placed successfully!'),
-      backgroundColor: Colors.green, // Colore di sfondo
-      duration: Duration(seconds: 2), // Durata della SnackBar
-    );
 
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
 
-  //PROVVISORIO
-  void showSnackBarKO(BuildContext context) {
-    final snackBar = SnackBar(
-      content: Text('Something went wrong!'),
-      backgroundColor: Colors.red, // Colore di sfondo
-      duration: Duration(seconds: 2), // Durata della SnackBar
-    );
 
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
 
   Future<String?> _authUser(LoginData data) async {
     return Future.delayed(loginTime).then((_) {
@@ -60,10 +43,9 @@ class _DipendenteLoginState extends State<DipendenteLogin>{
       logo: AssetImage('images/RUSHBET_Logo.png'),
       onLogin: _authUser,
       onSubmitAnimationCompleted: () {
-        showSnackBarOK(context);
         //Navigator.of(context).pushReplacementNamed('/homePageAuth');
         Navigator.push(context,
-            MaterialPageRoute(builder: ((context) => RegistraCliente())));
+            MaterialPageRoute(builder: ((context) => HomePage())));
       },
       hideForgotPasswordButton: true,
       onRecoverPassword: (String ) {  },
