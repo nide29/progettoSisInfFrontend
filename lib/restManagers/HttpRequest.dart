@@ -166,13 +166,13 @@ class Model {
     }
   }
 
-/*
-  String getClientFromToken(){
+
+  String getDipendenteFromToken(){
     Map<String, dynamic>? decodedToken = Jwt.parseJwt(_restManager.token!);
     return decodedToken['email'];
   }
 
-
+/*
   Future<String> createOrder(Orders o) async{
     Map<String, dynamic> params = o.toJson();
     print(o.toJson());

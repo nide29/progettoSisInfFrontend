@@ -3,16 +3,30 @@ import 'package:flutter_custom_cards/flutter_custom_cards.dart';
 import 'package:sisinf/UI/pages/RegistraCliente.dart';
 import 'package:sisinf/UI/pages/ricercaClienti.dart';
 
+import '../../models/Dipendente.dart';
+import '../../restManagers/HttpRequest.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+  /*Future<Dipendente?> _loadDipendente(String email) async {
+    Dipendente? d = await Model.sharedInstance.viewUser(email);
+    print(d?.toJson().toString());
+    return d;
+  }*/
+
+  String? _loadEmail() {
+    String? email =  Model.sharedInstance.getDipendenteFromToken();
+    return email;
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    String nome = "dipendenteeeee";
-    String email = "dipendent@eeeeee.eee";
 
     return Scaffold(
       appBar: AppBar(
