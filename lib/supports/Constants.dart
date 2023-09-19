@@ -8,15 +8,24 @@ class Constants {
   static final String ADDRESS_AUTHENTICATION_SERVER = "localhost:8080";
 
   // authentication
-  static final String REALM = "Store";
-  static final String CLIENT_ID = "StoreClient";
-  static final String CLIENT_SECRET = "Q9XFwm4mLGSAfr1wmBUTZjnCLM58cEV8";
-  static final String REQUEST_LOGIN =
-      "/realms/" + REALM + "/protocol/openid-connect/token";
-  static final String REQUEST_LOGOUT =
-      "/realms/" + REALM + "/protocol/openid-connect/logout";
+  static final String REALM = "psw-realm";
+  static final String CLIENT_ID = "psw-admin-client";
+  static final String CLIENT_SECRET = "";
+  static final String REQUEST_LOGIN = "/auth/realms/" + REALM + "/protocol/openid-connect/token";
+  static final String REQUEST_LOGOUT = "/auth/realms/" + REALM + "/protocol/openid-connect/logout";
 
   // requests --da aggiornare
+  static final String REQUEST_SEARCH_CLIENTE = "/utente/cliente";
+  static final String REQUEST_SEARCH_CLIENTE_BY_NOME = "/utente/cliente/nome";
+  static final String REQUEST_SEARCH_CLIENTE_BY_COGNOME = "/utente/cliente/cognome";
+  static final String REQUEST_ADD_CLIENTE = "/utente/cliente";
+  static final String REQUEST_DELETE_CLIENTE = "/utente/cliente/id";
+  static final String REQUEST_SEARCH_CLIENTE_BY_EMAIL = "/utente/cliente/email";
+  static final String REQUEST_SEARCH_CLIENTE_BY_USERNAME = "/utente/cliente/username";
+
+
+
+
   //orders
 
   // responses

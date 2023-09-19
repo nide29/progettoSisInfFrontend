@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:sisinf/UI/pages/homepage.dart';
 
 import '../../restManagers/HttpRequest.dart';
 
@@ -55,11 +56,13 @@ class _DipendenteLoginState extends State<DipendenteLogin>{
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: 'RUSH BET',
-      //logo: AssetImage('assets/images/ecorp-lightblue.png'),
+      logo: AssetImage('images/RUSHBET_Logo.png'),
       onLogin: _authUser,
       onSubmitAnimationCompleted: () {
         showSnackBarOK(context);
         //Navigator.of(context).pushReplacementNamed('/homePageAuth');
+        Navigator.push(context,
+            MaterialPageRoute(builder: ((context) => HomePage())));
       },
       hideForgotPasswordButton: true,
       onRecoverPassword: (String ) {  },

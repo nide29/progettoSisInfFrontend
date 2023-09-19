@@ -123,21 +123,23 @@ class Model {
       return null;
     }
   }
-
+*/
   //view user
-  Future<User?> viewUser(String email) async {
+  /*Future<Cliente?> viewUser(String email) async {
 
     Map<String, String> queryParam = {"email":email};
     try {
       String rawResult = await _restManager.makeGetRequest(
           Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_GET_USER, queryParam);
-      User u = User.fromJson(jsonDecode(rawResult));
-      return u;
+      Cliente c = Cliente.fromJson(jsonDecode(rawResult));
+      return c;
     } catch (e) {
       return null; // not the best solution
     }
   }
 
+   */
+/*
   void registerUser(User u, String password) async{
     Map<String, dynamic> params = Map();
     params["user"] = u.toJson();
