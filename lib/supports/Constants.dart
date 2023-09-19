@@ -23,6 +23,8 @@ class Constants {
   static final String REQUEST_SEARCH_CLIENTE_BY_EMAIL = "/utente/cliente/email";
   static final String REQUEST_SEARCH_CLIENTE_BY_USERNAME = "/utente/cliente/username";
 
+  static final String REQUEST_SEARCH_DIPENDENTE_BY_EMAIL = "/utente/dipendente/email";
+
 
 
 
