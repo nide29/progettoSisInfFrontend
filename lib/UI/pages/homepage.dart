@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: ((context) => ClientiGrid())));
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => RicercaClienti())));
                   },
                   child: Center(
                     child: Column(children: [
