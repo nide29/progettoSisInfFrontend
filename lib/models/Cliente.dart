@@ -2,15 +2,15 @@ import 'dart:core';
 
 class Cliente {
 
-
-  String? _id, _nome, _cognome, _email, _residenza, _dataNascita, _IBAN, _docID, _username, _statoFedelta;
+  int? _id;
+  String? _nome, _cognome, _email, _residenza, _dataNascita, _IBAN, _docID, _username, _statoFedelta;
   int? _saldoPunti;
   double? _saldoGioco;
 
 
   get id => _id;
 
-  Cliente(this._id, this._nome, this._cognome, this._email, this._residenza, this._dataNascita, this._IBAN, this._docID, this._username, this._statoFedelta, this._saldoGioco, this._saldoPunti);
+  Cliente(this._id, this._nome, this._cognome, this._docID, this._email, this._username, this._IBAN, this._residenza, this._dataNascita,  this._statoFedelta, this._saldoGioco, this._saldoPunti);
 
   /*
   Cliente.fromJson(Map<String, dynamic> json) {
@@ -31,15 +31,15 @@ class Cliente {
         json['id'],
         json['nome'],
         json['cognome'],
-        json['data_nascita'],
-        json['residenza'],
         json['documento_identita'],
         json['email'],
         json['username'],
         json['iban'],
+        json['residenza'],
+        json['data_nascita'],
         json['statoFedelta'],
         json['saldoGioco'],
-        json['saldoPunti']
+        json['saldoPunti'],
     );
   }
 

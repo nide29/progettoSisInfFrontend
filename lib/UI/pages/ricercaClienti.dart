@@ -4,36 +4,16 @@ import 'package:sisinf/models/Cliente.dart';
 
 import '../../restManagers/HttpRequest.dart';
 
-class RicercaClienti extends StatefulWidget {
-
-  @override
-  State<StatefulWidget> createState() => _RicercaClienti();
-}
-
-class _RicercaClienti extends State<RicercaClienti> {
-
+class RicercaClienti extends StatelessWidget {
   static List<Cliente> list = List.empty(growable: true);
 
-  @override
-  void initState() {
-    super.initState();
-    fetchData();
-  }
 
   @override
   Widget build(BuildContext context) {
+    //fetchData();
     print("LISTA: " + list.toString());
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.orangeAccent,
-          title: Text(
-            'CLIENTI',
-            style: TextStyle(
-                color: Colors.blue, fontSize: 24, fontFamily: 'Avenir'),
-          ),
-        ),
         body: Container(
           height: (list.length / 4).ceil() * 350,
           padding: const EdgeInsets.only(left: 30, right: 30),
@@ -43,7 +23,9 @@ class _RicercaClienti extends State<RicercaClienti> {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const CircularProgressIndicator(color: Colors.grey);
               } else if (snapshot.hasData) {
+                print("QUI CI ENTRA?");
                 list = snapshot.data!;
+                print("LISTAAAA: " + list.toString());
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
@@ -52,6 +34,7 @@ class _RicercaClienti extends State<RicercaClienti> {
                   itemCount: list.length,
                   itemBuilder: (BuildContext context, int index) {
                     final item = list[index];
+                    print("CLIENTEEE: " + item.nome);
                     return CustomCard(
                         color: Colors.white,
                         borderColor: Colors.grey.withOpacity(0.3),
@@ -96,6 +79,7 @@ class _RicercaClienti extends State<RicercaClienti> {
                   },
                 );
               } else {
+                print("NON HA DATI");
                 return Container(); //return di default altrimenti dart si arrabbia :)
               }
             },
@@ -104,9 +88,7 @@ class _RicercaClienti extends State<RicercaClienti> {
   }
 
   Future<List<Cliente>> fetchData() async {
-    print("FETCH1");
     List<Cliente> value = await Model.sharedInstance.getAllCliente();
-    print("VALUE: " + value.toString());
     return value;
   }
 

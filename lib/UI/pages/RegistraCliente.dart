@@ -22,7 +22,7 @@ class _RegistrationPageState extends State<RegistraCliente> {
   TextEditingController _IbanController = TextEditingController();
 
   void _registerCliente() async {
-    Cliente c = Cliente(null, _nomeController.value.text, _cognomeController.value.text, _emailController.value.text, _residenzaController.value.text, _dataNascitaController.value.text, _IbanController.value.text, _docIDController.value.text, _usernameController.value.text, null, null, null);
+    Cliente c = Cliente(null, _nomeController.text, _cognomeController.text, _docIDController.text, _emailController.text, _usernameController.text, _IbanController.text, _residenzaController.text, _dataNascitaController.text, null, null, null);
     Model.sharedInstance.register(c, _passwordController.value.text);
 
     _nomeController.clear();

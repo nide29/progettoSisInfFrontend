@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_cards/flutter_custom_cards.dart';
 import 'package:sisinf/UI/pages/RegistraCliente.dart';
+import 'package:sisinf/UI/pages/allClienti.dart';
 import 'package:sisinf/UI/pages/ricercaClienti.dart';
 
 import '../../models/Dipendente.dart';
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: ((context) => RicercaClienti())));
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => ClientiGrid())));
                   },
                   child: Center(
                     child: Column(children: [
