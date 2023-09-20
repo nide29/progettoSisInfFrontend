@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/Cliente.dart';
 import '../../restManagers/HttpRequest.dart';
+import 'homepage.dart';
 
 class RegistraCliente extends StatefulWidget {
   //const RegistrationPage({Key? key}) : super(key: key);
@@ -96,6 +97,34 @@ class _RegistrationPageState extends State<RegistraCliente> {
               ),
               onPressed: () {
                 _registerCliente();
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        content: Row(
+                          children: [
+                            const Text(
+                                "Registrazione effettuata!\nClicca su OK per essere reindirizzato alla Home"),
+                            MaterialButton(
+                              onPressed: () {
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    PageRouteBuilder(
+                                      pageBuilder: (context, animation1,
+                                          animation2) => HomePage(),
+                                      transitionDuration:
+                                      const Duration(seconds: 0),
+                                      reverseTransitionDuration:
+                                      const Duration(seconds: 0),
+                                    ),
+                                        (Route<dynamic> route) => false);
+                              },
+                              child: Text("OK"),
+                            ),
+                          ],
+                        ),
+                      );
+                    });
               },
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
