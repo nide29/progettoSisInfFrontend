@@ -5,6 +5,7 @@ import 'package:jwt_decode/jwt_decode.dart';
 import '../RestManagers/RestManager.dart';
 import '../models/AuthenticationData.dart';
 import '../models/Cliente.dart';
+import '../models/Dipendente.dart';
 import '../supports/Constants.dart';
 import '../supports/LoginResults.dart';
 
@@ -126,20 +127,20 @@ class Model {
   }
 */
   //view user
-  /*Future<Cliente?> viewUser(String email) async {
+  Future<Dipendente?> viewUser(String email) async {
 
     Map<String, String> queryParam = {"email":email};
     try {
       String rawResult = await _restManager.makeGetRequest(
-          Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_GET_USER, queryParam);
-      Cliente c = Cliente.fromJson(jsonDecode(rawResult));
-      return c;
+          Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_SEARCH_DIPENDENTE_BY_EMAIL, queryParam);
+      Dipendente d = Dipendente.fromJson(jsonDecode(rawResult));
+      return d;
     } catch (e) {
       return null; // not the best solution
     }
   }
 
-   */
+
 
   Future<List<Cliente>> getAllCliente() async {
     Map<String, String> params = Map();

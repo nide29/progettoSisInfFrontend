@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_cards/flutter_custom_cards.dart';
+import 'package:sisinf/UI/ViewDipendente.dart';
 import 'package:sisinf/UI/pages/RegistraCliente.dart';
 import 'package:sisinf/UI/pages/allClienti.dart';
 import 'package:sisinf/UI/pages/ricercaClienti.dart';
@@ -14,16 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  /*Future<Dipendente?> _loadDipendente(String email) async {
-    Dipendente? d = await Model.sharedInstance.viewUser(email);
-    print(d?.toJson().toString());
-    return d;
-  }*/
 
-  String? _loadEmail() {
-    String? email =  Model.sharedInstance.getDipendenteFromToken();
-    return email;
-  }
 
 
   @override
@@ -40,22 +32,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       //persistentFooterAlignment: AlignmentDirectional.center,
-      drawer: const Drawer(
-        backgroundColor: Color.fromRGBO(32, 79, 161, 1),
-        child: Column(
-          children: [
-            Icon(Icons.account_circle_rounded, size: 180),
-            SizedBox(height: 50),
-            Text("nome"),
-            SizedBox(height: 20),
-            Text("cognome"),
-            SizedBox(height: 20),
-            Text("email@sssss"),
-
-          ],
-        )
-        //BODY
-      ),
+      drawer: ViewDipendente(),
       body: Column(
         children: [
           Padding(padding: EdgeInsets.only(top: 100)),

@@ -7,6 +7,7 @@ class Dipendente {
 
   get id => _id;
 
+
   Dipendente(this._id, this._nome, this._cognome, this._email, this._residenza, this._dataNascita, this._IBAN, this._docID, this._username, this._ruolo);
 
   /*
