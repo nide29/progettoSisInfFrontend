@@ -195,19 +195,7 @@ class Model {
     }
   }
 
-/*
-  Future<String> createOrder(Orders o) async{
-    Map<String, dynamic> params = o.toJson();
-    print(o.toJson());
-    try {
-      await _restManager.makePostRequest(
-          Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_CREATE_ORDER, params,
-          type: TypeHeader.json);
-      return "ok";
-    }catch(e){
-      return e.toString();
-    }
-  }
+
   Future<void> modifyUser(String? email, String value,  String type) async {
     Map<String, String> params = Map();
     params["email"] = email.toString();
@@ -215,11 +203,12 @@ class Model {
     params["type"] = type;
     try {
       await _restManager.makePutRequest(
-          Constants.ADDRESS_STORE_SERVER, Constants.MODIFY_USER, params);
+          Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_MODIFY_CLIENT, params);
     }catch(e){
       print(e);
     }
   }
+  /*
 //view orders
   Stream<List<Orders>> viewOrders(String client) async* {
     try {
