@@ -2,7 +2,8 @@ import 'dart:core';
 
 class Dipendente {
 
-  String? _id, _nome, _cognome, _email, _residenza, _dataNascita, _IBAN, _docID, _username, _ruolo;
+  int? _id;
+  String? _nome, _cognome, _email, _residenza, _dataNascita, _IBAN, _docID, _username, _ruolo;
 
 
   get id => _id;

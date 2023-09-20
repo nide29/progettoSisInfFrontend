@@ -134,8 +134,10 @@ class Model {
       String rawResult = await _restManager.makeGetRequest(
           Constants.ADDRESS_STORE_SERVER, Constants.REQUEST_SEARCH_DIPENDENTE_BY_EMAIL, queryParam);
       Dipendente d = Dipendente.fromJson(jsonDecode(rawResult));
+      print("DIPENDENTE IN viewUser: " + d.toString());
       return d;
     } catch (e) {
+      print("ECCEZIONEEE: " + e.toString());
       return null; // not the best solution
     }
   }
@@ -170,6 +172,7 @@ class Model {
 
   String getDipendenteFromToken(){
     Map<String, dynamic>? decodedToken = Jwt.parseJwt(_restManager.token!);
+    print("EMAIL: " + decodedToken['email']);
     return decodedToken['email'];
   }
 

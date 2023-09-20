@@ -13,11 +13,11 @@ class ViewDipendente extends StatefulWidget{
 
 class ViewDipendenteState extends State<ViewDipendente>{
   
-  late Dipendente dipendente;
+  static Dipendente? dipendente = Dipendente(1,'a','a','a','a','a','a','a','a','a');
 
   Future<Dipendente?> _loadDipendente(String email) async {
     Dipendente? d = await Model.sharedInstance.viewUser(email);
-    print(d?.toJson().toString());
+    print("DIPENDENTEEEE: " + d!.toJson().toString());
     return d;
   }
 
@@ -33,6 +33,7 @@ class ViewDipendenteState extends State<ViewDipendente>{
     _loadDipendente(e!).then((loadedDip) {
       setState(() {
         dipendente = loadedDip!;
+        print("DIPENDENTE! : " + dipendente.toString());
       });
     });
   }
@@ -44,18 +45,25 @@ class ViewDipendenteState extends State<ViewDipendente>{
         backgroundColor: Color.fromRGBO(32, 79, 161, 1),
         child: Column(
           children: [
-            Icon(Icons.account_circle_rounded, size: 180),
+            Icon(Icons.account_circle_rounded, size: 180, color: Colors.white),
             SizedBox(height: 50),
-            Text("${dipendente.nome}"),
+            Text('INFO DIPENDENTE', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
+            SizedBox(height: 30),
+            Text("ID: ${dipendente!.id}", style: TextStyle(color: Colors.white, fontSize: 20)),
             SizedBox(height: 20),
-            Text("${dipendente.cognome}"),
+            Text("${dipendente!.nome}", style: TextStyle(color: Colors.white, fontSize: 20),),
             SizedBox(height: 20),
-            Text("${dipendente.email}"),
+            Text("${dipendente!.cognome}", style: TextStyle(color: Colors.white, fontSize: 20)),
+            SizedBox(height: 20),
+            Text("${dipendente!.email}", style: TextStyle(color: Colors.white, fontSize: 20)),
+            SizedBox(height: 20),
+            Text("${dipendente!.ruolo}", style: TextStyle(color: Colors.white, fontSize: 20)),
+
 
           ],
         )
       //BODY
-    )
+    );
   }
   
   
