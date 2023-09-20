@@ -172,6 +172,25 @@ class Model {
     return decodedToken['email'];
   }
 
+
+  Future<Cliente?> deleteCliente(String idUtente) async {
+    Map<String, String> params = Map();
+    params["id"] = idUtente;
+    try {
+      String rawResult = await _restManager.makeDeleteRequest(
+          Constants.ADDRESS_STORE_SERVER,
+          Constants.REQUEST_DELETE_CLIENTE,
+          params,
+          TypeHeader.json);
+      print('model rawresult: ' + rawResult);
+      return Cliente.fromJson(jsonDecode(rawResult));
+    } catch (e) {
+      print('ECCEZIONE');
+      print(e);
+      return null; // not the best solution
+    }
+  }
+
 /*
   Future<String> createOrder(Orders o) async{
     Map<String, dynamic> params = o.toJson();

@@ -12,6 +12,12 @@ class Cliente {
 
   Cliente(this._id, this._nome, this._cognome, this._docID, this._email, this._username, this._IBAN, this._residenza, this._dataNascita,  this._statoFedelta, this._saldoGioco, this._saldoPunti);
 
+  get statoFedelta => _statoFedelta;
+
+  set statoFedelta(value) {
+    _statoFedelta = value;
+  }
+
   /*
   Cliente.fromJson(Map<String, dynamic> json) {
       _id = json['id'];
@@ -103,4 +109,12 @@ class Cliente {
   set cognome(value) {
     _cognome = value;
   }
+
+  int? get saldoPunti => _saldoPunti;
+
+
+
+  double? get saldoGioco => _saldoGioco;
+
+
 }

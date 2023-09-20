@@ -4,6 +4,7 @@ import 'package:sisinf/UI/pages/ricercaClienti.dart';
 
 import '../../models/Cliente.dart';
 import '../../restManagers/HttpRequest.dart';
+import 'clienteView.dart';
 
 class allClienti extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class allClienti extends StatefulWidget {
 
 class _ClientiGridState extends State<allClienti>{
 
-  late List<Cliente> listaClienti;
+  static List<Cliente> listaClienti = List.empty(growable: true);
 
   Future<List<Cliente>?> _loadProducts() async {
     try {
@@ -69,7 +70,7 @@ class _ClientiGridState extends State<allClienti>{
                         borderColor: Colors.grey.withOpacity(0.3),
                         elevation: 12,
                         onTap: () {
-                          //Navigator.push(context, MaterialPageRoute(builder: ((context) => ProductDetails(prodotto: item))));
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) => ClienteView(cliente: item))));
                         },
                         borderRadius: 18,
                         shadowColor: Colors.grey.withOpacity(0.12),
@@ -82,7 +83,7 @@ class _ClientiGridState extends State<allClienti>{
                                 decoration: const BoxDecoration(
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(15))),
-                                child: Icon(Icons.account_box_rounded)),
+                                child: Icon(Icons.account_box_rounded, size: 200)),
                           ),
                           Align(
                             alignment: const Alignment(0, 0.5),

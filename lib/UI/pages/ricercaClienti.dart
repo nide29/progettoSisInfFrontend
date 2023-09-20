@@ -20,11 +20,9 @@ class RicercaClienti extends StatelessWidget {
                 color: Colors.blue, fontSize: 24, fontFamily: 'Avenir'),
           ),
         ),
-        body: ListView(
-          children: [
+        body:
             allClienti(),
-          ],
-        )
+
     );
 
   }

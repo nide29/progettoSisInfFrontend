@@ -104,7 +104,7 @@ class RestManager {
   Future<String> makeDeleteRequest(String serverAddress, String servicePath,
       [Map<String, String>? value, TypeHeader? type]) async {
     return _makeRequest(
-        serverAddress, servicePath, "delete", (type != null) as TypeHeader,
+        serverAddress, servicePath, "delete", type,
         value: value);
   }
 
