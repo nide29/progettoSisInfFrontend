@@ -22,11 +22,11 @@ class _ClienteViewState extends State<ClienteView> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: const Color.fromRGBO(255, 199, 0, 1),
         title: Text(
           'CLIENTE: ${widget.cliente.nome.toString().toUpperCase()} ${widget.cliente.cognome.toString().toUpperCase()}',
           style: TextStyle(
-              color: Colors.blue, fontSize: 24, fontFamily: 'Avenir'),
+              color: Colors.white, fontSize: 24, fontFamily: 'Avenir', fontWeight: FontWeight.bold),
         ),
       ),
       body: ListView(

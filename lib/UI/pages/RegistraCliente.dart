@@ -40,7 +40,13 @@ class _RegistrationPageState extends State<RegistraCliente> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pagina di Registrazione'),
+        elevation: 0,
+        backgroundColor: const Color.fromRGBO(255, 199, 0, 1),
+        title: Text(
+          'REGISTRAZIONE CLIENTE',
+          style:
+          TextStyle(color: Colors.white, fontSize: 24, fontFamily: 'Avenir', fontWeight: FontWeight.bold),
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),

@@ -11,13 +11,12 @@ class RicercaClienti extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.orangeAccent,
+        appBar: AppBar(elevation: 0,
+          backgroundColor: const Color.fromRGBO(255, 199, 0, 1),
           title: Text(
-            'CLIENTI',
-            style: TextStyle(
-                color: Colors.blue, fontSize: 24, fontFamily: 'Avenir'),
+            'LISTA CLIENTI',
+            style:
+            TextStyle(color: Colors.white, fontSize: 24, fontFamily: 'Avenir', fontWeight: FontWeight.bold),
           ),
         ),
         body:

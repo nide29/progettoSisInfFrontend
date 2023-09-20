@@ -46,7 +46,7 @@ class _ClientiGridState extends State<allClienti>{
     return Scaffold(
         body: Container(
           height: (listaClienti.length / 4).ceil() * 350,
-          padding: const EdgeInsets.only(left: 30, right: 30),
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
           child: FutureBuilder<List<Cliente>>(
             future: fetchData(),
             builder: (context, snapshot) {
@@ -88,7 +88,7 @@ class _ClientiGridState extends State<allClienti>{
                           Align(
                             alignment: const Alignment(0, 0.5),
                             child: Text(
-                              '${item.nome} ${item.cognome}', //categoria del prodotto
+                              '${item.nome.toString().toUpperCase()} ${item.cognome.toString().toUpperCase()}', //categoria del prodotto
                               style: const TextStyle(
                                   color: Colors.black87,
                                   fontFamily: 'Avenir',

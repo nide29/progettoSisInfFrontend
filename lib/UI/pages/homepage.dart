@@ -24,11 +24,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: const Color.fromRGBO(255, 199, 0, 1),
         title: Text(
           'GESTIONE CLIENTI',
           style:
-              TextStyle(color: Colors.blue, fontSize: 24, fontFamily: 'Avenir'),
+              TextStyle(color: Colors.white, fontSize: 24, fontFamily: 'Avenir', fontWeight: FontWeight.bold),
         ),
       ),
       //persistentFooterAlignment: AlignmentDirectional.center,
